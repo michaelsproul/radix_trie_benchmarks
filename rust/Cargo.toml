@@ -1,0 +1,17 @@
+[package]
+
+name = "benchmark"
+version = "0.0.1"
+authors = ["Michael Sproul <micsproul@gmail.com>"]
+
+[lib]
+
+name = "benchmark"
+
+[dependencies.radix_trie]
+
+git = "https://github.com/michaelsproul/rust_radix_trie.git"
+
+[dependencies.sequence_trie]
+
+git = "https://github.com/michaelsproul/rust_sequence_trie.git"

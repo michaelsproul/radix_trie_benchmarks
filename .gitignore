@@ -1,0 +1,4 @@
+*.swp
+rust/Cargo.lock
+rust/target
+rust/.cargo
