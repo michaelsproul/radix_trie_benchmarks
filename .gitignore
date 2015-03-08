@@ -2,3 +2,6 @@
 rust/Cargo.lock
 rust/target
 rust/.cargo
+haskell/.cabal-sandbox
+haskell/cabal.sandbox.config
+haskell/dist
