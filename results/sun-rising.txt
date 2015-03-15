@@ -1,0 +1,55 @@
+=== Rust Benchmarks ===
+   Compiling benchmark v0.0.1 (file:///home/michael/Dropbox/Uni/CMPS112/Project/trie_benchmarks/rust)
+     Running target/release/benchmark-3b24889ea5197d45
+
+running 4 tests
+test benchmark::radix_trie_integrity ... ignored
+test benchmark::trie_get           ... bench:    112546 ns/iter (+/- 1613)
+test benchmark::trie_insert        ... bench:    143304 ns/iter (+/- 2340)
+test benchmark::trie_insert_remove ... bench:    279744 ns/iter (+/- 5265)
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 3 measured
+
+
+=== Haskell Benchmarks ===
+Writing a default package environment file to
+/home/michael/Dropbox/Uni/CMPS112/Project/trie_benchmarks/haskell/cabal.sandbox.config
+Using an existing sandbox located at
+/home/michael/Dropbox/Uni/CMPS112/Project/trie_benchmarks/haskell/.cabal-sandbox
+Resolving dependencies...
+All the requested packages are already installed:
+Use --reinstall if you want to reinstall anyway.
+Resolving dependencies...
+Configuring trie-benchmarks-0.0.1.0...
+Preprocessing executable 'benchmark' for trie-benchmarks-0.0.1.0...
+[1 of 1] Compiling Main             ( src/Benchmark.hs, dist/build/benchmark/benchmark-tmp/Main.o )
+Linking dist/build/benchmark/benchmark ...
+Running benchmark...
+benchmarking bytestring-trie/insert
+time                 115.1 μs   (115.0 μs .. 115.2 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 115.1 μs   (115.0 μs .. 115.1 μs)
+std dev              198.6 ns   (162.0 ns .. 265.6 ns)
+
+benchmarking bytestring-trie/get
+time                 67.01 μs   (66.91 μs .. 67.13 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 67.03 μs   (66.98 μs .. 67.12 μs)
+std dev              228.2 ns   (131.1 ns .. 400.7 ns)
+
+benchmarking bytestring-trie/remove
+time                 110.0 μs   (109.9 μs .. 110.1 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 110.1 μs   (110.0 μs .. 110.1 μs)
+std dev              175.3 ns   (138.1 ns .. 278.5 ns)
+
+
+mkdir -p /home/michael/Dropbox/Uni/CMPS112/Project/trie_benchmarks/go
+=== Go Benchmarks ===
+PASS
+BenchmarkPatriciaInsert	    5000	    284100 ns/op
+BenchmarkPatriciaGet	   20000	     61086 ns/op
+BenchmarkPatriciaInsertRemove	    5000	    349754 ns/op
+BenchmarkSauerbratenInsert	    5000	    269146 ns/op
+BenchmarkArmonInsert	    5000	    336028 ns/op
+ok  	github.com/michaelsproul/go_trie_benchmarks	9.042s

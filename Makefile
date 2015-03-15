@@ -1,4 +1,4 @@
-TEST_FILE = $(shell pwd)/data/sun-rising.txt
+TEST_FILE ?= $(shell pwd)/data/sun-rising.txt
 GOPATH = $(shell pwd)/go
 GO_REPO = "github.com/michaelsproul/go_trie_benchmarks"
 

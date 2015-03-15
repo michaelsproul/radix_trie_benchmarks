@@ -1,0 +1,54 @@
+=== Rust Benchmarks ===
+     Running target/release/benchmark-3b24889ea5197d45
+
+running 4 tests
+test benchmark::radix_trie_integrity ... ignored
+test benchmark::trie_get           ... bench:  87558457 ns/iter (+/- 699546)
+test benchmark::trie_insert        ... bench:  93081592 ns/iter (+/- 1435879)
+test benchmark::trie_insert_remove ... bench: 175984068 ns/iter (+/- 1082267)
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 3 measured
+
+
+=== Haskell Benchmarks ===
+Writing a default package environment file to
+/home/michael/Dropbox/Uni/CMPS112/Project/trie_benchmarks/haskell/cabal.sandbox.config
+Using an existing sandbox located at
+/home/michael/Dropbox/Uni/CMPS112/Project/trie_benchmarks/haskell/.cabal-sandbox
+Resolving dependencies...
+All the requested packages are already installed:
+Use --reinstall if you want to reinstall anyway.
+Resolving dependencies...
+Configuring trie-benchmarks-0.0.1.0...
+Preprocessing executable 'benchmark' for trie-benchmarks-0.0.1.0...
+Running benchmark...
+benchmarking bytestring-trie/insert
+time                 409.0 ms   (387.6 ms .. 424.4 ms)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 408.6 ms   (404.1 ms .. 411.3 ms)
+std dev              4.166 ms   (0.0 s .. 4.770 ms)
+variance introduced by outliers: 19% (moderately inflated)
+
+benchmarking bytestring-trie/get
+time                 55.58 ms   (54.71 ms .. 56.88 ms)
+                     0.999 R²   (0.998 R² .. 1.000 R²)
+mean                 55.09 ms   (54.92 ms .. 55.69 ms)
+std dev              523.6 μs   (127.5 μs .. 905.2 μs)
+
+benchmarking bytestring-trie/remove
+time                 382.7 ms   (321.9 ms .. 427.9 ms)
+                     0.997 R²   (0.990 R² .. 1.000 R²)
+mean                 386.5 ms   (378.8 ms .. 392.8 ms)
+std dev              10.02 ms   (0.0 s .. 10.96 ms)
+variance introduced by outliers: 19% (moderately inflated)
+
+
+=== Go Benchmarks ===
+testing: warning: no tests to run
+PASS
+BenchmarkPatriciaInsert	      30	  57012425 ns/op
+BenchmarkPatriciaGet	      30	  40383517 ns/op
+BenchmarkPatriciaInsertRemove	      20	  96802570 ns/op
+BenchmarkSauerbratenInsert	      30	  58499304 ns/op
+BenchmarkArmonInsert	      20	  64454800 ns/op
+ok  	github.com/michaelsproul/go_trie_benchmarks	9.435s
