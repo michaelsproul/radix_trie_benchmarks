@@ -54,9 +54,7 @@ fn trie_get(b: &mut Bencher) {
     let trie = make_trie(&words);
 
     b.iter(|| {
-        for w in &words {
-            trie.get(&&w[..]);
-        }
+        words.iter().map(|w| trie.get(&&w[..])).collect::<Vec<Option<&usize>>>();
     });
 }
 

@@ -16,7 +16,7 @@ haskell-bench:
 	@export TEST_FILE=$(TEST_FILE)
 	cd haskell
 	cabal sandbox init
-	cabal install --dependencies-only
+	cabal install -j4 --dependencies-only
 	cabal configure
 	cabal run benchmark
 	@echo
