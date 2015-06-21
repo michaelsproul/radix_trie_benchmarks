@@ -21,6 +21,6 @@ Go benchmarks can be found [here](https://github.com/michaelsproul/go_trie_bench
 
 # Requirements
 
-* Rust compiler (rustc) and package manager (Cargo).
+* Nightly Rust compiler (rustc) and package manager (Cargo).
 * Haskell compiler (ghc) and build tool (cabal).
 * Go build tool (go).
