@@ -7,8 +7,7 @@ bench: rust-bench haskell-bench go-bench
 rust-bench:
 	@echo "=== Rust Benchmarks ==="
 	@export TEST_FILE=$(TEST_FILE)
-	cd rust
-	cargo bench
+	cd rust && cargo bench
 	@echo
 
 haskell-bench:

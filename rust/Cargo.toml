@@ -11,6 +11,7 @@ name = "benchmark"
 [dependencies.radix_trie]
 
 git = "https://github.com/michaelsproul/rust_radix_trie.git"
+branch = "new-stuff"
 
 [dependencies.sequence_trie]
 
