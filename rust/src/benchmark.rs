@@ -4,6 +4,8 @@ use std::io::Read;
 use std_test::Bencher;
 
 use radix_trie::Trie;
+use qp_trie::Trie as QpTrie;
+use qp_trie::wrapper::BString;
 
 #[cfg(test)]
 fn get_text() -> Vec<String> {
@@ -19,6 +21,17 @@ fn make_trie(words: &[String]) -> Trie<&str, usize> {
 
     for w in words {
         trie.insert(&w[..], w.len());
+    }
+
+    trie
+}
+
+#[cfg(test)]
+fn make_qp_trie(words: &[String]) -> QpTrie<BString, usize> {
+    let mut trie = QpTrie::new();
+
+    for w in words {
+        trie.insert_str(w, w.len());
     }
 
     trie
@@ -67,6 +80,38 @@ fn trie_insert_remove(b: &mut Bencher) {
 
         for w in &words {
             trie.remove(&&w[..]);
+        }
+    });
+}
+
+#[bench]
+fn qp_trie_insert(b: &mut Bencher) {
+    let words = get_text();
+
+    b.iter(|| {
+        make_qp_trie(&words);
+    });
+}
+
+#[bench]
+fn qp_trie_get(b: &mut Bencher) {
+    let words = get_text();
+    let trie = make_qp_trie(&words);
+
+    b.iter(|| {
+        words.iter().map(|w| trie.get_str(w)).collect::<Vec<Option<&usize>>>();
+    });
+}
+
+#[bench]
+fn qp_trie_insert_remove(b: &mut Bencher) {
+    let words = get_text();
+
+    b.iter(|| {
+        let mut trie = make_qp_trie(&words);
+
+        for w in &words {
+            trie.remove_str(w);
         }
     });
 }
