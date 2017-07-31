@@ -7,3 +7,4 @@ haskell/cabal.sandbox.config
 haskell/dist
 haskell/.stack-work
 go/
+.DS_Store
